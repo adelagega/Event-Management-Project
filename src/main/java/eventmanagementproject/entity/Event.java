@@ -1,27 +1,28 @@
 package eventmanagementproject.entity;
 
-import java.util.Date;
+import JAXB.LocalDateAdapter;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import java.time.LocalDate;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Event {
+    @XmlElement(name="eventId")
     private int eventId;
-    private int eventTypeId;
-    private int venueId;
-    private Date eventDate;
+    @XmlElement(name="eventDate")
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+    private LocalDate eventDate;
+    @XmlElement(name="budget")
     private float budget;
+    @XmlElement(name="theme")
     private String theme;
 
-    public Event(int eventId, int eventTypeId, int venueId, Date eventDate, float budget, String theme) {
-        this.eventId = eventId;
-        this.eventTypeId = eventTypeId;
-        this.venueId = venueId;
-        this.eventDate = eventDate;
-        this.budget = budget;
-        this.theme = theme;
+    public Event() {
     }
 
-    public Event(int eventTypeId, int venueId, Date eventDate, float budget, String theme) {
-        this.eventTypeId = eventTypeId;
-        this.venueId = venueId;
+    public Event(int eventId, LocalDate eventDate, float budget, String theme) {
+        this.eventId = eventId;
         this.eventDate = eventDate;
         this.budget = budget;
         this.theme = theme;
@@ -35,27 +36,11 @@ public class Event {
         this.eventId = eventId;
     }
 
-    public int getEventTypeId() {
-        return eventTypeId;
-    }
-
-    public void setEventTypeId(int eventTypeId) {
-        this.eventTypeId = eventTypeId;
-    }
-
-    public int getVenueId() {
-        return venueId;
-    }
-
-    public void setVenueId(int venueId) {
-        this.venueId = venueId;
-    }
-
-    public Date getEventDate() {
+    public LocalDate getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(Date eventDate) {
+    public void setEventDate(LocalDate eventDate) {
         this.eventDate = eventDate;
     }
 
@@ -79,11 +64,11 @@ public class Event {
     public String toString() {
         return "Event{" +
                 "eventId=" + eventId +
-                ", eventTypeId=" + eventTypeId +
-                ", venueId=" + venueId +
                 ", eventDate=" + eventDate +
                 ", budget=" + budget +
                 ", theme='" + theme + '\'' +
                 '}';
     }
 }
+
+

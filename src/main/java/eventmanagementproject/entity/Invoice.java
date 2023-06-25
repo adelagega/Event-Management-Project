@@ -1,22 +1,26 @@
 package eventmanagementproject.entity;
 
-import java.util.Date;
+import JAXB.LocalDateAdapter;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import java.time.LocalDate;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Invoice {
+    @XmlElement(name="invoiceId")
     private int invoiceId;
-    private int bookingid;
-    private Date invoiceDate;
+    @XmlElement(name = "invoiceDate")
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+    private LocalDate invoiceDate;
+    @XmlElement(name = "totalAmount")
     private float totalAmount;
 
-    public Invoice(int invoiceId, int bookingid, Date invoiceDate, float totalAmount) {
-        this.invoiceId = invoiceId;
-        this.bookingid = bookingid;
-        this.invoiceDate = invoiceDate;
-        this.totalAmount = totalAmount;
+    public Invoice() {
     }
 
-    public Invoice(int bookingid, Date invoiceDate, float totalAmount) {
-        this.bookingid = bookingid;
+    public Invoice(int invoiceId, LocalDate invoiceDate, float totalAmount) {
+        this.invoiceId = invoiceId;
         this.invoiceDate = invoiceDate;
         this.totalAmount = totalAmount;
     }
@@ -29,19 +33,11 @@ public class Invoice {
         this.invoiceId = invoiceId;
     }
 
-    public int getBookingid() {
-        return bookingid;
-    }
-
-    public void setBookingid(int bookingid) {
-        this.bookingid = bookingid;
-    }
-
-    public Date getInvoiceDate() {
+    public LocalDate getInvoiceDate() {
         return invoiceDate;
     }
 
-    public void setInvoiceDate(Date invoiceDate) {
+    public void setInvoiceDate(LocalDate invoiceDate) {
         this.invoiceDate = invoiceDate;
     }
 
@@ -57,7 +53,6 @@ public class Invoice {
     public String toString() {
         return "Invoice{" +
                 "invoiceId=" + invoiceId +
-                ", bookingid=" + bookingid +
                 ", invoiceDate=" + invoiceDate +
                 ", totalAmount=" + totalAmount +
                 '}';

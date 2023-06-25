@@ -1,21 +1,25 @@
 package eventmanagementproject.entity;
 
+import jakarta.xml.bind.annotation.*;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Client {
+    @XmlElement(name="clientId")
    private int clientId;
+    @XmlElement(name="firstName")
    private String firstName;
+    @XmlElement(name="lastName")
    private String lastName;
+    @XmlElement(name="email")
    private String email;
+    @XmlElement(name="phoneNumber")
    private String phoneNumber;
+
+    public Client() {
+    }
 
     public Client(int clientId, String firstName, String lastName, String email, String phoneNumber) {
         this.clientId = clientId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Client(String firstName, String lastName, String email, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
