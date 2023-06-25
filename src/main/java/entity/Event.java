@@ -1,24 +1,30 @@
 package entity;
 
-import java.util.Date;
+import JAXB.LocalDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import java.time.LocalDate;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Event {
+    @XmlElement(name="eventId")
     private int eventId;
-    private int clientId;
-    private int eventTypeId;
-    private int venueId;
-    private Date eventDate;
+    @XmlElement(name="eventDate")
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+    private LocalDate eventDate;
+    @XmlElement(name="budget")
     private float budget;
+    @XmlElement(name="theme")
     private String theme;
 
     public Event() {
     }
 
-    public Event(int eventId, int clientId, int eventTypeId, int venueId, Date eventDate, float budget, String theme) {
+    public Event(int eventId, LocalDate eventDate, float budget, String theme) {
         this.eventId = eventId;
-        this.clientId = clientId;
-        this.eventTypeId = eventTypeId;
-        this.venueId = venueId;
         this.eventDate = eventDate;
         this.budget = budget;
         this.theme = theme;
@@ -32,35 +38,11 @@ public class Event {
         this.eventId = eventId;
     }
 
-    public int getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(int clientId) {
-        this.clientId = clientId;
-    }
-
-    public int getEventTypeId() {
-        return eventTypeId;
-    }
-
-    public void setEventTypeId(int eventTypeId) {
-        this.eventTypeId = eventTypeId;
-    }
-
-    public int getVenueId() {
-        return venueId;
-    }
-
-    public void setVenueId(int venueId) {
-        this.venueId = venueId;
-    }
-
-    public Date getEventDate() {
+    public LocalDate getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(Date eventDate) {
+    public void setEventDate(LocalDate eventDate) {
         this.eventDate = eventDate;
     }
 
@@ -79,4 +61,17 @@ public class Event {
     public void setTheme(String theme) {
         this.theme = theme;
     }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventId=" + eventId +
+                ", eventDate=" + eventDate +
+                ", budget=" + budget +
+                ", theme='" + theme + '\'' +
+                '}';
+    }
 }
+
+
+

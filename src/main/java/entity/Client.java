@@ -1,11 +1,24 @@
 package entity;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Client {
-   private int clientId;
-   private String firstName;
-   private String lastName;
-   private String email;
-   private String phoneNumber;
+    @XmlElement(name="clientId")
+    private int clientId;
+    @XmlElement(name="firstName")
+    private String firstName;
+    @XmlElement(name="lastName")
+    private String lastName;
+    @XmlElement(name="email")
+    private String email;
+    @XmlElement(name="phoneNumber")
+    private String phoneNumber;
+
+    public Client() {
+    }
 
     public Client(int clientId, String firstName, String lastName, String email, String phoneNumber) {
         this.clientId = clientId;
@@ -66,3 +79,4 @@ public class Client {
                 '}';
     }
 }
+
