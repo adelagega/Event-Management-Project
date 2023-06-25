@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Booking>
+    <bookingId>1</bookingId>
+    <paymentStatus>PAID</paymentStatus>
+    <Event>
+        <eventId>1</eventId>
+        <eventDate>2023-06-01T00:00:00+00:00</eventDate>
+        <budget>10000</budget>
+        <theme>Wedding</theme>
+    </Event>
+    <Clients>
+        <Client>
+            <clientId>1</clientId>
+            <firstName>Shay</firstName>
+            <lastName>Patel</lastName>
+            <email>patelshay@yahoo.com</email>
+            <phoneNumber>223-443</phoneNumber>
+        </Client>
+        <Client>
+            <clientId>2</clientId>
+            <firstName>Bella</firstName>
+            <lastName>Ficetola</lastName>
+            <email>ficetolab@outlook.com</email>
+            <phoneNumber>324-222</phoneNumber>
+        </Client>
+    </Clients>
+    <Payment>
+        <paymentId>1</paymentId>
+        <amount>500.00</amount>
+        <paymentDate>2023-06-01</paymentDate>
+        <paymentType>Credit Card</paymentType>
+        <Invoice>
+            <invoiceId>1</invoiceId>
+            <invoiceDate>2023-06-01</invoiceDate>
+            <totalAmount>10000</totalAmount>
+        </Invoice>
+    </Payment>
+</Booking>

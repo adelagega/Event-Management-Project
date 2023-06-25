@@ -1,0 +1,57 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Booking">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:int" name="bookingId"/>
+                <xs:element type="xs:string" name="paymentStatus"/>
+                <xs:element name="Event">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:int" name="eventId"/>
+                            <xs:element type="xs:dateTime" name="eventDate"/>
+                            <xs:element type="xs:float" name="budget"/>
+                            <xs:element type="xs:string" name="theme"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Clients">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Client" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:int" name="clientId"/>
+                                        <xs:element type="xs:string" name="firstName"/>
+                                        <xs:element type="xs:string" name="lastName"/>
+                                        <xs:element type="xs:string" name="email"/>
+                                        <xs:element type="xs:string" name="phoneNumber"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Payment">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:int" name="paymentId"/>
+                            <xs:element type="xs:float" name="amount"/>
+                            <xs:element type="xs:date" name="paymentDate"/>
+                            <xs:element type="xs:string" name="paymentType"/>
+                            <xs:element name="Invoice">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:int" name="invoiceId"/>
+                                        <xs:element type="xs:date" name="invoiceDate"/>
+                                        <xs:element type="xs:float" name="totalAmount"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
