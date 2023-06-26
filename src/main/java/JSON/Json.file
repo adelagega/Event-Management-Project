@@ -1,0 +1,41 @@
+{
+    "Booking": {
+        "bookingId": "1",
+        "paymentStatus": "PAID",
+        "Event": {
+            "eventId": "1",
+            "eventDate": "2023-06-01",
+            "budget": "10000",
+            "theme": "Wedding"
+        },
+        "Clients": {
+            "Client": [
+                {
+                    "clientId": "1",
+                    "firstName": "Shay",
+                    "lastName": "Patel",
+                    "email": "patelshay@yahoo.com",
+                    "phoneNumber": "223-443"
+                },
+                {
+                    "clientId": "2",
+                    "firstName": "Bella",
+                    "lastName": "Ficetola",
+                    "email": "ficetolab@outlook.com",
+                    "phoneNumber": "324-222"
+                }
+            ]
+        },
+        "Payment": {
+            "paymentId": "1",
+            "amount": "500.00",
+            "paymentDate": "2023-06-01",
+            "paymentType": "Credit Card",
+            "Invoice": {
+                "invoiceId": "1",
+                "invoiceDate": "2023-06-01",
+                "totalAmount": "10000"
+            }
+        }
+    }
+}
