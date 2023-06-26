@@ -1,28 +1,32 @@
 package entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.xml.bind.annotation.*;
-
-import java.util.List;
 
 @XmlRootElement(name="Booking")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Booking {
     @XmlElement(name="bookingId")
+    @JsonProperty("bookingId")
     private int bookingId;
     @XmlElement(name="paymentStatus")
+    @JsonProperty("paymentStatus")
     private String paymentStatus;
     @XmlElement(name="Event")
+    @JsonProperty("Event")
     private Event event;
     @XmlElementWrapper(name="Clients")
     @XmlElement(name="Client")
-    private List<Client> clients;
+    @JsonProperty("Clients")
+    private Clients clients;
     @XmlElement(name="Payment")
+    @JsonProperty("Payment")
     private Payment payment;
 
     public Booking() {
     }
 
-    public Booking(int bookingId, String paymentStatus, Event event, List<Client> clients, Payment payment) {
+    public Booking(int bookingId, String paymentStatus, Event event, Clients clients, Payment payment) {
         this.bookingId = bookingId;
         this.paymentStatus = paymentStatus;
         this.event = event;
@@ -54,11 +58,11 @@ public class Booking {
         this.event = event;
     }
 
-    public List<Client> getClients() {
+    public Clients getClients() {
         return clients;
     }
 
-    public void setClients(List<Client> clients) {
+    public void setClients(Clients clients) {
         this.clients = clients;
     }
 

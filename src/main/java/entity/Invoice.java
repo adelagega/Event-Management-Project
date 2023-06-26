@@ -1,23 +1,28 @@
 package entity;
 
 import JAXB.LocalDateAdapter;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
 import java.time.LocalDate;
-import java.util.Date;
 
 @XmlAccessorType(XmlAccessType.FIELD)
+@JsonRootName(value = "Invoice")
 public class Invoice {
     @XmlElement(name="invoiceId")
+    @JsonProperty("invoiceId")
     private int invoiceId;
     @XmlElement(name = "invoiceDate")
     @XmlJavaTypeAdapter(LocalDateAdapter.class)
+    @JsonProperty("invoiceDate")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate invoiceDate;
     @XmlElement(name = "totalAmount")
+    @JsonProperty("totalAmount")
     private float totalAmount;
 
     public Invoice() {

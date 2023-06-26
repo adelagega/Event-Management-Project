@@ -1,20 +1,28 @@
 package entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
+@JsonRootName(value = "Client")
 public class Client {
     @XmlElement(name="clientId")
+    @JsonProperty("clientId")
     private int clientId;
     @XmlElement(name="firstName")
+    @JsonProperty("firstName")
     private String firstName;
     @XmlElement(name="lastName")
+    @JsonProperty("lastName")
     private String lastName;
     @XmlElement(name="email")
+    @JsonProperty("email")
     private String email;
     @XmlElement(name="phoneNumber")
+    @JsonProperty("phoneNumber")
     private String phoneNumber;
 
     public Client() {
