@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <eventManagement>
+    <events>
+        <event>
+            <eventID>1</eventID>
+            <eventType>
+               <eventTypeId>9</eventTypeId>
+               <eventTypeName>Birthday Party</eventTypeName>
+            </eventType>
+            <venue>
+               <venueId>2</venueId>
+               <venueName>Imperial</venueName>
+               <venueCapacity>900</venueCapacity>
+               <venueLocation>Lyndhurst Ave</venueLocation>
+            </venue>
+            <suppliers>
+              <supplier>
+                <supplierId>1</supplierId>
+                <supplierName>Delicioussa</supplierName>
+                <supplierType>Catering</supplierType>
+                <contactName>Lucian Fenti</contactName>
+                <contactEmail>lucian@gmil.com</contactEmail>
+                <contactPhone>224-112</contactPhone>
+              </supplier>
+              <supplier>
+                <supplierId>2</supplierId>
+                <supplierName>Magnificent Design</supplierName>
+                <supplierType>Decoration</supplierType>
+                <contactName>Alan Moam</contactName>
+                <contactEmail>moama@yahoo.com</contactEmail>
+                <contactPhone>332-988</contactPhone>
+              </supplier>
+            </suppliers>
+            <staff>
+               <staffMember>
+                 <staffId>1</staffId>
+                 <firstName>Bella</firstName>
+                 <lastName>Rodrigues</lastName>
+                 <role>Event Coordinator</role>
+                </staffMember>
+                <staffMember>
+                    <staffId>2</staffId>
+                    <firstName>Alana</firstName>
+                    <lastName>Tsai</lastName>
+                    <role>Catering Manager</role>
+                </staffMember>
+            </staff>
+        </event>
+    </events>
+</eventManagement>
+
